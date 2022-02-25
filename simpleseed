@@ -1,0 +1,12 @@
+job('simpletrigger') {
+  parameters {
+  STRINGPARAM('OBJECT', 'UNDESCRIBED','THIS PARAMETER DESCRIBES A TYPE OF OBJECT')
+  }
+ steps {
+  shell ('echo $JOB_NAME $BUILD_NUMBER')
+  shell ('echo $OBJECT')
+}
+publishers {
+downstream('simplejobwithparameter','success')
+}
+}
